@@ -19,13 +19,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to 'Streak Manager', '/', :class => 'navbar-brand' %>
+      <%= link_to 'Streak Manager', root_path, :class => 'navbar-brand' %>
     </div>
     <div class='collapse navbar-collapse' id='myNavbar'>
       <ul class='nav nav-pills navbar-nav'>
-        <li class="active"><%= link_to 'Home', '/' %></li>
-        <li><%= link_to 'Manage Streaks', 'streak' %></li>
-        <li><%= link_to 'About', 'about' %></li>
+        <li class="active"><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Manage Streaks', streak_path %></li>
+        <li><%= link_to 'About', about_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
