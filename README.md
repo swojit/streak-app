@@ -1,1 +1,2 @@
-# streak-app
+# Streak Manager
+App to manage your streaks.
