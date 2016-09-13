@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
   root 'pages#welcome'
   get 'about' => 'pages#about'
   get 'streak' => 'pages#streak'

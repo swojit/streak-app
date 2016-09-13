@@ -23,9 +23,9 @@
     </div>
     <div class='collapse navbar-collapse' id='myNavbar'>
       <ul class='nav nav-pills navbar-nav'>
-        <li class="active"><%= link_to 'Home', root_path %></li>
-        <li><%= link_to 'Manage Streaks', streak_path %></li>
-        <li><%= link_to 'About', about_path %></li>
+        <li class='<%= "active" if params[:action] == "welcome" %>'><%= link_to 'Home', root_path %></li>
+        <li class='<%= "active" if params[:action] == "streak" %>'><%= link_to 'Manage Streaks', streak_path %></li>
+        <li class='<%= "active" if params[:action] == "about" %>'><%= link_to 'About', about_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
@@ -38,12 +38,12 @@
           <% end %>
         </li>
         <% else %>
-        <li>
+        <li class='<%= "active" if params[:action] == "new" && params[:controller] == "users" %>'>
           <%= link_to signup_path do %>
           <span class="glyphicon glyphicon-user"></span> Sign Up
           <% end %>
         </li>
-        <li>
+        <li class='<%= "active" if params[:action] == "new" && params[:controller] == "sessions" %>'>
           <%= link_to login_path do %>
           <span class="glyphicon glyphicon-log-in"></span> Login
           <% end %>
