@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root 'pages#welcome'
-  get 'about' => 'pages#about'
   get 'streak' => 'pages#streak'
   get 'signup'  => 'users#new'
   get 'login' => 'sessions#new'
