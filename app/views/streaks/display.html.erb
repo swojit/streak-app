@@ -1,4 +1,14 @@
 <% @streaks.each do |s| %>
-<%= s.task %>
-<%= s.streak(:posts) %>
+<div class='panel-group'>
+  <div class='panel panel-default'>
+    <div class='panel-heading'><%= s.task %></div>
+    <div class='panel-body'><%= s.streak(:posts) %></div>
+    <div class='panel-footer'>
+      <%= form_tag({:controller => 'streaks', :action => 'post'}, :method => 'post') do %>
+      <%= hidden_field_tag(:id, Streak.find_by(task: s.task).id) %>
+      <%= submit_tag('Update Streak', :type => 'button', :class => 'btn btn-default')%>
+      <% end %>
+    </div>
+  </div>
+</div>
 <% end %>
