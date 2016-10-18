@@ -3,8 +3,13 @@ class StreaksController < ApplicationController
     @streaks = Streak.all
   end
   def post
-    @post = Post.create(streak_id: params[:id])
-    @post.save
-    render 'streak'
+    @post = Post.new(post_params)
+    if @post.save
+       render 'streak'
+    end
+  end
+  private
+  def post_params
+    params.require(:id)
   end
 end
